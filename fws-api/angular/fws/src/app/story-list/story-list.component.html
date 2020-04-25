@@ -1,0 +1,18 @@
+<h1>List of Articles</h1>
+
+<div>
+    <table border = 1>
+        <tr>
+            <th>ID</th>
+            <th>title</th>
+            <th>Description</th>
+        </tr>
+        <tr *ngFor = "let story of stories">
+            <td>{{story.id}}</td>
+            <td>{{story.title}}</td>
+            <td>{{story.description}}</td>
+        </tr>
+    </table>
+
+
+</div>

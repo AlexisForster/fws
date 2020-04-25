@@ -1,0 +1,23 @@
+section
+{
+    width: 100%;
+    height: 100vh; 
+}
+
+section.sec1
+{
+    /*background: url();*/
+    background: rgb(255, 240, 255);
+    background-size: cover;
+
+}
+
+section.sec2
+{
+    padding: 100px;
+    box-sizing:border-box;
+    height: auto;
+    background: rgb(250, 250, 250);
+    background-size: cover;
+
+}
