@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { StoryComponent} from './story/story.component';
-import { StoryListComponent } from './story-list/story-list.component';
+import { StoryComponent} from './content/story/story.component';
+import { StoryListComponent } from './content/story-list/story-list.component';
 import { HomeComponent } from './home/home.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { BookShelfComponent } from './bookshelf/bookshelf.component';
+import { PageNotFoundComponent } from './core/page-not-found/page-not-found.component';
+import { BookShelfComponent } from './content/bookshelf/bookshelf.component';
 
 const routes: Routes = [
 { path: '' , redirectTo: '/home', pathMatch: 'full'},

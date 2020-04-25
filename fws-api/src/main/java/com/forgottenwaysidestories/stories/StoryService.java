@@ -16,10 +16,10 @@ public class StoryService {
 	private StoryRepository storyRepository;
 	
 	
-	public List<Story> getStoriesByTopic(Long topicId) {
+	public List<Story> getStoriesByBookshelf(Long bookshelfId) {
 		//return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();		
 		List<Story> articles = new ArrayList<>();
-		storyRepository.findByTopicId(topicId)
+		storyRepository.findByBookshelfId(bookshelfId)
 				.forEach(articles::add);
 		return articles;
 	}
@@ -28,15 +28,15 @@ public class StoryService {
 		return storyRepository.findById(storyId).get();
 	}
 	
-	public void addStory(Story course) {
-		storyRepository.save(course);
+	public void addStory(Story story) {
+		storyRepository.save(story);
 	}
 
-	public void updateStory(Story course) {
-		storyRepository.save(course);
+	public void updateStory(Story story) {
+		storyRepository.save(story);
 	}
 
-	public void deleteStory(String id) {
-		storyRepository.deleteById(new Long(id));
+	public void deleteStory(String storyId) {
+		storyRepository.deleteById(new Long(storyId));
 	}
 }

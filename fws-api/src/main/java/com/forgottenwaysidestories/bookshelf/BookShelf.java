@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="topic")
+@Table(name="bookshelf")
 public class BookShelf implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
@@ -18,9 +18,8 @@ public class BookShelf implements Serializable{
 	@Id
 	@GeneratedValue
 	private Long id;
-	
-	private String title;
-	private String description;
+	private String code;
+	private String name;
 
 	public Long getId() {
 		return id;
@@ -30,27 +29,27 @@ public class BookShelf implements Serializable{
 		
 	}
 	
-	public BookShelf(Long id, String title, String description) {
+	public BookShelf(Long id, String code, String name) {
 		super();
 		this.id = id;
-		this.title = title;
-		this.description = description;
+		this.code = code;
+		this.name = name;
 	}
 	
 	public void setId(Long id) {
 		this.id = id;
 	}
 	
-	public String getTitle() {
-		return title;
+	public String getCode() {
+		return code;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+	public void setCode(String title) {
+		this.code = title;
 	}
-	public String getDescription() {
-		return description;
+	public String getName() {
+		return name;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setName(String description) {
+		this.name = description;
 	}
 }

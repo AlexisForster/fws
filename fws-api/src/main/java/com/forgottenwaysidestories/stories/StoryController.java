@@ -14,33 +14,33 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.forgottenwaysidestories.bookshelf.BookShelf;
 
-@CrossOrigin("*")
+@CrossOrigin("${access.cross-origin}")
 @RestController
 public class StoryController {
 
 	@Autowired
 	private StoryService storyService;
 	
-	@RequestMapping("/topics/{topicId}/stories")
-	public List<Story> getAllStoriesByTopic(@PathVariable Long topicId) {
-		return storyService.getStoriesByTopic(topicId);
+	@RequestMapping("/bookshelf/{bookshelfId}/stories")
+	public List<Story> getAllStoriesByTopic(@PathVariable Long bookshelfId) {
+		return storyService.getStoriesByBookshelf(bookshelfId);
 	}
 	
-	@RequestMapping("/topics/{topicId}/stories/{storyId}")
+	@RequestMapping("/bookshelf/{bookshelfId}/stories/{storyId}")
 	public Story getStory(@PathVariable Long storyId) {
 		System.out.println("Controller Flowcheck");
 		return storyService.getStory(storyId);
 	}
 	
-	@RequestMapping(method=RequestMethod.POST, value="/topics/{topicId}/stories")
-	public void addStory(@RequestBody Story story, @PathVariable Long topicId) {
-		story.setTopic(new BookShelf(topicId, "", ""));
+	@RequestMapping(method=RequestMethod.POST, value="/bookshelf/{bookshelfId}/stories")
+	public void addStory(@RequestBody Story story, @PathVariable Long bookshelfId) {
+		story.setTopic(new BookShelf(bookshelfId, "", ""));
 		storyService.addStory(story);		
 	}
 	
-	@RequestMapping(method=RequestMethod.PUT, value="/topics/{topicId}/stories/{storyId}")
-	public void updateStory(@RequestBody Story story, @PathVariable Long topicId, @PathVariable Long storyId) {
-		story.setTopic(new BookShelf(topicId, "", ""));
+	@RequestMapping(method=RequestMethod.PUT, value="/bookshelf/{bookshelfId}/stories/{storyId}")
+	public void updateStory(@RequestBody Story story, @PathVariable Long bookshelfId, @PathVariable Long storyId) {
+		story.setTopic(new BookShelf(bookshelfId, "", ""));
 		storyService.updateStory(story);		
 	}
 	

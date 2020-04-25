@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 @Repository("storyRepository")
 public interface StoryRepository extends JpaRepository<Story, Long >{
 	
-	public List<Story> findByTopicId(Long topicId);
+	public List<Story> findByBookshelfId(Long topicId);
 	
 }

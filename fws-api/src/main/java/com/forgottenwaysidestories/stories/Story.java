@@ -20,10 +20,10 @@ public class Story implements Serializable{
 	@GeneratedValue
 	private Long id;
 	private String title;
-	private String description;
+	private String summary;
 
 	@ManyToOne
-	private BookShelf topic;
+	private BookShelf bookshelf;
 	
 	public Long getId() {
 		return id;
@@ -33,12 +33,12 @@ public class Story implements Serializable{
 		
 	}
 	
-	public Story(Long id, String title, String description, Long topicId) {
+	public Story(Long id, String title, String summary, Long bookshelfId) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.description = description;
-		this.topic = new BookShelf(topicId, "", "");
+		this.summary = summary;
+		this.bookshelf = new BookShelf(bookshelfId, "", "");
 	}
 	
 	public void setId(Long id) {
@@ -51,18 +51,18 @@ public class Story implements Serializable{
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getDescription() {
-		return description;
+	public String getSummary() {
+		return summary;
 	}
-	public void setDescription(String description) {
-		this.description = description;
+	public void setSummary(String description) {
+		this.summary = description;
 	}
 
 	public void setTopic(BookShelf topic) {
-		this.topic = topic;
+		this.bookshelf = topic;
 	}
 	
 	public BookShelf getTopic() {
-		return topic;
+		return bookshelf;
 	}
 }
