@@ -7,16 +7,23 @@
 
 
 .container
-{
+{   /*
     position: relative;
     width: 1200px;
     height: 300px;
     margin: 240px auto;
-    background: #000;
+    background: #000;*/
+    display: flex;
+}
+
+.container div{
+    border: 1px #ccc solid;
+    padding: 10px; 
 }
 
 .container .box-one
 {
+    /*
     position: relative;
     width: calc(400px- 30px);
     height: calc(300px- 30px);
@@ -24,17 +31,24 @@
     float: left;
     margin: 15px;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: hidden;*/
+    flex: 3;
 }
 
 .container .box-two
 {
-    position: relative;
+/*    position: relative;
     width: calc(500px);
     height: calc(300px- 30px);
     background: #333;
     float: left;
     margin: 15px;
     box-sizing: border-box;
-    overflow: hidden;
+    overflow: hidden;*/
+    flex: 2;
+}
+
+.container .box-three
+{
+    flex: 1;
 }
