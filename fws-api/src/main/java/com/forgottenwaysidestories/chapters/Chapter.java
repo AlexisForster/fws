@@ -37,7 +37,7 @@ public class Chapter implements Serializable{
 		super();
 		this.id = id;
 		this.title = title;
-		this.story = new Story(storyId, "", "", topicId);
+		this.story = new Story(storyId, "", "", "", topicId);
 	}
 	
 	public void setId(Long id) {

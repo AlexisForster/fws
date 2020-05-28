@@ -34,13 +34,13 @@ public class StoryController {
 	
 	@RequestMapping(method=RequestMethod.POST, value="/bookshelf/{bookshelfId}/stories")
 	public void addStory(@RequestBody Story story, @PathVariable Long bookshelfId) {
-		story.setTopic(new BookShelf(bookshelfId, "", ""));
+		story.setBookshelf(new BookShelf(bookshelfId, "", ""));
 		storyService.addStory(story);		
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/bookshelf/{bookshelfId}/stories/{storyId}")
 	public void updateStory(@RequestBody Story story, @PathVariable Long bookshelfId, @PathVariable Long storyId) {
-		story.setTopic(new BookShelf(bookshelfId, "", ""));
+		story.setBookshelf(new BookShelf(bookshelfId, "", ""));
 		storyService.updateStory(story);		
 	}
 	

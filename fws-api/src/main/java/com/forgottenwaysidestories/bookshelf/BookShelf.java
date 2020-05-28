@@ -21,10 +21,6 @@ public class BookShelf implements Serializable{
 	private String code;
 	private String name;
 
-	public Long getId() {
-		return id;
-	}
-	
 	public BookShelf() {
 		
 	}
@@ -34,6 +30,10 @@ public class BookShelf implements Serializable{
 		this.id = id;
 		this.code = code;
 		this.name = name;
+	}
+	
+	public Long getId() {
+		return id;
 	}
 	
 	public void setId(Long id) {

@@ -21,6 +21,7 @@ public class Story implements Serializable{
 	private Long id;
 	private String title;
 	private String summary;
+	private String imageLink;
 
 	@ManyToOne
 	private BookShelf bookshelf;
@@ -33,11 +34,12 @@ public class Story implements Serializable{
 		
 	}
 	
-	public Story(Long id, String title, String summary, Long bookshelfId) {
+	public Story(Long id, String title, String summary, String imageLink, Long bookshelfId) {
 		super();
 		this.id = id;
 		this.title = title;
 		this.summary = summary;
+		this.imageLink = imageLink;
 		this.bookshelf = new BookShelf(bookshelfId, "", "");
 	}
 	
@@ -57,12 +59,19 @@ public class Story implements Serializable{
 	public void setSummary(String description) {
 		this.summary = description;
 	}
+	
+	public String getImageLink() {
+		return imageLink;
+	}
+	public void setImageLink(String imageLink) {
+		this.imageLink = imageLink;
+	}
 
-	public void setTopic(BookShelf topic) {
+	public void setBookshelf(BookShelf topic) {
 		this.bookshelf = topic;
 	}
 	
-	public BookShelf getTopic() {
+	public BookShelf getBookshelf() {
 		return bookshelf;
 	}
 }

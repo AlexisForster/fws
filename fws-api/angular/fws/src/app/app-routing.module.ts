@@ -10,9 +10,9 @@ const routes: Routes = [
 { path: '' , redirectTo: '/home', pathMatch: 'full'},
 { path: 'home', component: HomeComponent},
 { path: 'bookshelf', component: BookShelfComponent},
-{ path: 'bookshelf/:bookshelfId', component: StoryListComponent},
+{ path: 'bookshelf/:bookshelfId/stories', component: StoryListComponent},
 /*{path: 'recommended/', component: RecommendedComponent} <--- Displays the recommended stories for a user*/
-{ path: 'stories/:storyId', component: StoryComponent},
+{ path: 'bookshelf/:bookshelfId/stories/:storyId', component: StoryComponent},
 /*{path: 'stories/:storyId/:chapterId', component: ChapterComponent} */
 { path: '**', component: PageNotFoundComponent}
 ];

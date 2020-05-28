@@ -35,13 +35,13 @@ public class ChapterController {
 	
 	@RequestMapping(method=RequestMethod.POST, value="/topics/{topicId}/stories/{storyId}/chapters")
 	public void addChapter(@RequestBody Chapter chapter, @PathVariable Long storyId, @PathVariable Long topicId) {
-		chapter.setStory(new Story(storyId, "", "", topicId));
+		chapter.setStory(new Story(storyId, "", "", "",topicId));
 		chapterService.addChapter(chapter);		
 	}
 	
 	@RequestMapping(method=RequestMethod.PUT, value="/topics/{topicId}/stories/{storyId}/chapters")
 	public void updateChapter(@RequestBody Chapter chapter, @PathVariable Long topicId, @PathVariable Long storyId) {
-		chapter.setStory(new Story(storyId, "", "", topicId));
+		chapter.setStory(new Story(storyId, "", "","", topicId));
 		chapterService.updateChapter(chapter);		
 	}
 	

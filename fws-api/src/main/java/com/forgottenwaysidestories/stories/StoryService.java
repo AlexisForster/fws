@@ -18,10 +18,10 @@ public class StoryService {
 	
 	public List<Story> getStoriesByBookshelf(Long bookshelfId) {
 		//return topics.stream().filter(t -> t.getId().equals(id)).findFirst().get();		
-		List<Story> articles = new ArrayList<>();
+		List<Story> stories = new ArrayList<>();
 		storyRepository.findByBookshelfId(bookshelfId)
-				.forEach(articles::add);
-		return articles;
+				.forEach(stories::add);
+		return stories;
 	}
 
 	public Story getStory(Long storyId) {

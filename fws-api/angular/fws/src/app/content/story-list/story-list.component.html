@@ -1,18 +1,18 @@
-<h1>Welcome to the bookshelf {{bookshelf.name}} </h1>
+<!-- <h1>Welcome to the bookshelf {{bookshelf.name}} </h1> -->
+
+<h1> Browse Stories </h1>
 
 <div>
-    <table border = 1>
-        <tr>
-            <th>ID</th>
-            <th>title</th>
-            <th>Summary</th>
-        </tr>
-        <tr *ngFor = "let story of stories">
-            <td>{{story.id}}</td>
-            <td>{{story.title}}</td>
-            <td>{{story.summary}}</td>
-        </tr>
-    </table>
-
-
+    <div *ngFor="let story of stories">
+        <div class = "container-1">
+            <div class="box-1">
+                <!-- <img src={{story.image_link}}></img> -->
+            </div> 
+            <div class="box-2">
+                <h3>{{story.title}}</h3>
+                <h3>image_link: {{story.image_link}}</h3>
+                <h3>{{story.summary}}</h3>
+            </div>
+        </div>
+    </div>
 </div>
